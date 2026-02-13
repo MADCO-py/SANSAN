@@ -1,0 +1,194 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFC2D1;
+    color: #d32f2f;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-Y: auto;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 90%;
+    width: 800px;
+    /* Adjust as needed */
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Space between buttons */
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#yesButton {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#noButton {
+    background-color: #f5f5f5;
+    color: #d32f2f;
+    transition: transform 0.5s ease;
+    z-index: 1000;
+    /* Ensure the button is always on top */
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#response {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #d32f2f;
+}
+
+#imageContainer {
+    margin-top: 20px;
+}
+
+#imageContainer img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.image-grid img {
+    width: calc(50% - 10px);
+    /* Two images per row on mobile */
+    height: 350px;
+    /* Fixed height for all images */
+    object-fit: cover;
+    /* Ensure images cover the area without distortion */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+    .image-grid img {
+        width: calc(33.33% - 10px);
+        /* Three images per row on larger screens */
+    }
+}
+
+/* Animation for the grid container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the response message */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations to the grid and message */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+    /* Fade-in animation for the grid */
+}
+
+#response {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #d32f2f;
+    animation: slideIn 1s ease-out 0.5s;
+    /* Slide-in animation for the message (with delay) */
+    animation-fill-mode: both;
+    /* Ensure the final state is applied after animation */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
+  
+  body.dark-mode .container {
+    background-color: #333333; /* Dark container background */
+    color: #ffffff; /* Light text */
+  }
+  
+  body.dark-mode #yesButton {
+    background-color: #ff4d4d; /* Darker red for the "Yes" button */
+  }
+  
+  body.dark-mode #noButton {
+    background-color: #666666; /* Darker gray for the "No" button */
+    color: #ffffff; /* Light text */
+  }
+  
+  body.dark-mode #imageContainer img {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Light shadow for images */
+  }
+  
+  body.dark-mode .image-grid img {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Light shadow for grid images */
+  }
