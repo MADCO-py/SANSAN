@@ -32,7 +32,8 @@ yesButton.addEventListener('click', () => {
   // Add the response message
   const message = document.createElement('p');
   message.id = 'response';
-  message.textContent = "PERO TU INVITAS 🤣🫵";
+  message.textContent = "Yo sabía que dirías que sí, no porque yo lo haya programado para que fuese así, pero me alegra que quieras la dona Me dices cuándo estás libre y nos vemos ";
+  
   container.appendChild(message);
 });
 
@@ -72,7 +73,7 @@ noButton.addEventListener('click', () => {
 });
 function mouseoverNoButton() {
   noButton.addEventListener('mouseover', () => {
-    response.textContent = "COMO QUE NO TONTO POLLAS";
+    response.textContent = "Como le vas a decir que no a una dona";
     moveNoButton();
   });
 }
